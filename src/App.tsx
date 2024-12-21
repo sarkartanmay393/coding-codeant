@@ -2,6 +2,7 @@ import './global.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignInPage from "./components/SignInPage";
 import styled from "@emotion/styled";
+import Dashboard from './components/Dashboard';
 
 const Layout = styled.div`
   height: 100vh;
@@ -14,6 +15,7 @@ function App() {
     <Layout>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Dashboard />} />
           <Route path="login" element={<SignInPage />} />
         </Routes>
       </BrowserRouter>
