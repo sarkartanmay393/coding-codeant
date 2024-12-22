@@ -32,7 +32,7 @@ const SignInPage = () => {
   return (
     <div className="flex h-screen w-screen overflow-hidden">
       {/* Left Side */}
-      <div className="relative flex-1 items-center justify-center bg-white hidden md:flex">
+      <div className="relative flex-1 items-center justify-center bg-white hidden lg:flex overflow-hidden">
         <img src={AnalyticsImg} alt="" className="z-50" />
         <img src={BiggerSmokePng} alt="" className="fixed bottom-6 left-6" />
       </div>

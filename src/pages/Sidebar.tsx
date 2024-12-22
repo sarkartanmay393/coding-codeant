@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 
 const NAVIGATION_ITEMS = [
   "Repositories",
@@ -33,12 +34,19 @@ const Users = ["AliceWonderland", "BobBuilder", "CharlieBrown", "DianaPrince"];
 type NavigationItem = (typeof NAVIGATION_ITEMS)[number];
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const [selectedItem, setSelectedItem] =
     useState<NavigationItem>("Repositories");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
+    const newDrawerState = !isDrawerOpen;
+    setIsDrawerOpen(newDrawerState);
+    if (newDrawerState) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   };
 
   return (
@@ -140,6 +148,7 @@ const Sidebar = () => {
           </Button>
 
           <Button
+            onClick={() => navigate("/login")}
             variant="ghost"
             className="justify-start gap-2 h-10 font-normal text-gray-600 hover:bg-blue-50 hover:text-gray-600"
           >
