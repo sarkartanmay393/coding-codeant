@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import RepositoryListing from "./pages/Dashboard";
+import SignInPage from "./pages/SignIn";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/dashboard" element={<RepositoryListing />} />
+        <Route path="/login" element={<SignInPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
