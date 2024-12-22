@@ -12,14 +12,15 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
+} from "./ui/dropdown-menu";
 import { useNavigate } from "react-router-dom";
+import Logo from '../assets/logo.svg'
 
 const NAVIGATION_ITEMS = [
   "Repositories",
@@ -55,7 +56,7 @@ const Sidebar = () => {
       <div className="h-16 flex justify-between items-center p-4 bg-white shadow-md md:hidden z-50">
         <div className="w-40 h-8">
           <img
-            src="/images/logo.svg"
+            src={Logo}
             alt="CodeAnt AI"
             className="w-full h-full"
           />
@@ -84,7 +85,7 @@ const Sidebar = () => {
         <div className="hidden md:flex items-center gap-2 px-2 mb-4">
           <div className="w-40 h-8">
             <img
-              src="/images/logo.svg"
+              src={Logo}
               alt="CodeAnt AI"
               className="w-full h-full"
             />

@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 import RepositoryListView from "../components/RepositoryListView";
 
 type Language =

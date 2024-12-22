@@ -1,4 +1,4 @@
-![](./public//smoke.svg)
+![](./src//assets//logo.svg)
 
 # CodeAnt AI Dashboard
 
@@ -23,9 +23,9 @@ Styled with Tailwind CSS (w/ Shadcn UI) for rapid development and easy customiza
 ### Icons and UI Components
 Uses `lucide-react` and `simple-icons` for a consistent look. Custom components like `SearchInput` and `Sidebar` ensure cohesive design.
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="./authentication.png" style="max-width: 524px; width: 100%;" />
-  <img src="./dashboard.png" style="max-width: 524px; width: 100%;" />
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+  <img src="./authentication.png" style="max-width: 524px; width: 100%; border-radius: 8px;" />
+  <img src="./dashboard.png" style="max-width: 524px; width: 100%; border-radius: 8px;" />
 </div>
 
 ## Thought Process
