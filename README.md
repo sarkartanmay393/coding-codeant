@@ -1,43 +1,49 @@
 ![](./public//images//logo.svg)
 
-# Coding CodeAnt
+# CodeAnt AI Dashboard
 
-Welcome to the Coding CodeAnt project! This repository is a web application designed to manage and display a list of repositories with various functionalities such as searching, filtering, and refreshing the repository data. The application is built using modern web technologies and follows a component-based architecture for scalability and maintainability.
+This web app manages and displays repositories with features like search, filter, and refresh. I simulated login, refreshing functionalities.
 
 ## Design Decisions
 
 ### Component-Based Architecture
-The application is structured using React components, which allows for modularity and reusability. Each component is responsible for a specific part of the UI, making it easier to manage and update.
+Built with React components for modularity and reusability.
 
-- **App Component**: The root component that sets up the routing for the application using `react-router-dom`. It directs users to the main dashboard where repositories are listed.
-- **RepositoryListing Component**: Displays the list of repositories and includes functionalities like search and refresh. It uses React hooks for state management and side effects.
-- **RepoCard Component**: Represents individual repository details in a card format, showcasing information like name, visibility, language, size, and last update.
-- **Sidebar Component**: Provides navigation options and user interactions, enhancing the user experience with a collapsible menu.
+- **App Component**: Sets up routing with `react-router-dom` to the main dashboard.
+- **RepositoryListing Component**: Lists repositories with search and refresh features using React hooks.
+- **RepoCard Component**: Shows repository details like name, visibility, language, size, and last update.
+- **Sidebar Component**: Offers navigation with a collapsible menu.
 
 ### State Management
-React's built-in hooks (`useState`, `useEffect`, `useMemo`) are utilized for managing component states and side effects. This approach keeps the code clean and efficient, ensuring that components re-render only when necessary.
+Uses React hooks (`useState`, `useEffect`, `useMemo`) for efficient state and side effect management.
 
 ### UI and Styling
-The application uses Tailwind CSS for styling, which offers a utility-first approach to design. This choice allows for rapid UI development and easy customization of styles.
+Styled with Tailwind CSS (w/ Shadcn UI) for rapid development and easy customization.
 
 ### Icons and UI Components
-The project leverages the `lucide-react` library for icons, providing a consistent and modern look across the application. Custom UI components like `Button`, `SearchInput`, and `Badge` are used to maintain a cohesive design language.
+Uses `lucide-react` and `simple-icons` for a consistent look. Custom components like `SearchInput` and `Sidebar` ensure cohesive design.
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img src="./authentication.png" style="max-width: 524px; width: 100%;" />
+  <img src="./dashboard.png" style="max-width: 524px; width: 100%;" />
+</div>
 
 ## Thought Process
 
-The primary goal of this project was to create a user-friendly interface for managing repositories. Key considerations included:
+Goals: Create a user-friendly interface for managing repositories.
 
-- **Usability**: Ensuring that the application is intuitive and easy to navigate. Features like search and refresh are prominently placed for quick access.
-- **Performance**: Using React's memoization and efficient state management to keep the application responsive, even with a large number of repositories.
-- **Scalability**: Designing components to be reusable and easily extendable, allowing for future enhancements without significant refactoring.
+- **Usability**: Intuitive navigation with prominent search and refresh features.
+- **Performance**: Responsive with React's memoization and efficient state management.
+- **Scalability**: Reusable components for easy future enhancements.
+- **User Flow**: Login at `/login`, redirect to `/dashboard`, simulate actions with `setTimeout`.
 
 ## Getting Started
 
-To run the application locally, follow these steps:
+To run locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/coding-codeant.git
+   git clone https://github.com/sarkartanmay393/coding-codeant.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -52,8 +58,8 @@ To run the application locally, follow these steps:
    npm start
    ```
 
-The application will be available at `http://localhost:3000`.
+Access the app at `http://localhost:3000`.
 
 ## Conclusion
 
-The Coding CodeAnt project is a robust and flexible solution for managing repositories. Its design emphasizes modularity, performance, and user experience, making it a solid foundation for further development and customization.
+Coding CodeAnt is a robust UI for managing repositories, focusing on modularity, performance, and user experience.
