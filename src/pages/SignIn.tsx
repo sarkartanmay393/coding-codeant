@@ -7,11 +7,11 @@ import {
 } from "../components/ui/tabs";
 import { SiBitbucket, SiGithub } from "@icons-pack/react-simple-icons";
 
-import Gitlab from "../../public/images/gitlab.svg";
-import AzureDevops from "../../public/images/devops.svg";
-import CodeantLogo from "../../public/images/logo.svg";
-import AnalyticsImg from "../../public/images/analytics.svg";
-import BiggerSmokePng from "../../public/images/bigger-smoke.svg";
+import Gitlab from "../assets/gitlab.svg";
+import AzureDevops from "../assets/devops.svg";
+import CodeantLogo from "../assets/logo.svg";
+import AnalyticsImg from "../assets/analytics.svg";
+import BiggerSmokePng from "../assets/bigger-smoke.svg";
 import { KeyRoundIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 

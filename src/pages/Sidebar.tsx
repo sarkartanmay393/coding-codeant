@@ -140,11 +140,14 @@ const Sidebar = () => {
 
         <div className="mt-auto flex flex-col gap-1">
           <Button
+            asChild
             variant="ghost"
             className="justify-start gap-2 h-10 font-normal text-gray-600 hover:bg-blue-50 hover:text-gray-600"
           >
-            <HelpCircle className="h-4 w-4" />
-            Support
+            <a href="mailto:sarkartanmay393@gmail.com">
+              <HelpCircle className="h-4 w-4" />
+              Support
+            </a>
           </Button>
 
           <Button
