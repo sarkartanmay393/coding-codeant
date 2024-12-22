@@ -5,13 +5,30 @@ import {
   TabsList,
   TabsTrigger,
 } from "../components/ui/tabs";
-import { GitGraphIcon, Github, Lock } from "lucide-react";
+import { SiBitbucket, SiGithub } from "@icons-pack/react-Simple-icons";
 
+import Gitlab from "../../public/images/gitlab.svg";
+import AzureDevops from "../../public/images/devops.svg";
 import CodeantLogo from "../../public/images/logo.svg";
 import AnalyticsImg from "../../public/images/analytics.svg";
 import BiggerSmokePng from "../../public/images/bigger-smoke.svg";
+import { KeyRoundIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const associatedEle = e.currentTarget;
+    // const holdTemp = associatedEle.innerHTML;
+    associatedEle.innerHTML = `
+      <div class="animate-spin w-5 h-5 border-2 border-t-transparent border-blue-500 rounded-full"></div>
+    `;
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1000);
+  };
+
   return (
     <div className="flex h-screen w-screen overflow-hidden">
       {/* Left Side */}
@@ -22,16 +39,11 @@ const SignInPage = () => {
 
       {/* Right Side */}
       <div className="flex-1 flex flex-col items-center justify-center gap-2 bg-gray-50">
-        
         {/* Login Board */}
         <div className="m-4 flex min-w-[320px] min-h-[524px] md:w-[620px] md:h-[600px] flex-col rounded-lg bg-white px-6 py-9 shadow-sm gap-5 border-[0.1px] overflow-auto">
           {/* Header */}
           <div className="flex flex-col gap-9 text-center">
-            <img
-              src={CodeantLogo}
-              alt="CodeAnt AI"
-              className="mx-auto h-8"
-            />
+            <img src={CodeantLogo} alt="CodeAnt AI" className="mx-auto h-8" />
             <h2 className="text-3xl font-semibold whitespace-nowrap">
               Welcome to CodeAnt AI
             </h2>
@@ -40,48 +52,97 @@ const SignInPage = () => {
           {/* Tabs */}
           <Tabs defaultValue="saas" className="w-full">
             <TabsList className="grid w-full grid-cols-2 h-16 p-0 mb-9 border-[1px] rounded-lg">
-              <TabsTrigger className="rounded-lg h-full text-lg text-[20px] text-gray-800 bg-gray-50 data-[state=active]:bg-blue-600 data-[state=active]:text-white" value="saas">SAAS</TabsTrigger>
-              <TabsTrigger className="rounded-lg h-full text-lg text-[20px] text-gray-800 bg-gray-50 data-[state=active]:bg-blue-600 data-[state=active]:text-white" value="self-hosted">Self Hosted</TabsTrigger>
+              <TabsTrigger
+                className="rounded-lg h-full text-lg text-[20px] text-gray-800 bg-gray-50 data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                value="saas"
+              >
+                SAAS
+              </TabsTrigger>
+              <TabsTrigger
+                className="rounded-lg h-full text-lg text-[20px] text-gray-800 bg-gray-50 data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+                value="self-hosted"
+              >
+                Self Hosted
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="saas" className="space-y-3">
-              <Button variant="outline" size="lg" className="w-full">
-                <Github className="mr-2 h-4 w-4" />
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
+                <SiGithub width={24} height={24} className="mr-2 scale-125" />
                 Sign in with GitHub
               </Button>
-              <Button variant="outline" size="lg" className="w-full">
-                <img
-                  src="/bitbucket-icon.svg"
-                  alt=""
-                  className="mr-2 h-4 w-4"
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
+                <SiBitbucket
+                  width={24}
+                  height={24}
+                  className="mr-2 scale-125"
+                  color="#2e8fff"
                 />
                 Sign in with Bitbucket
               </Button>
-              <Button variant="outline" size="lg" className="w-full">
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
                 <img
-                  src="/azure-devops-icon.svg"
-                  alt=""
-                  className="mr-2 h-4 w-4"
+                  src={AzureDevops}
+                  alt="AzureDevops"
+                  width={20}
+                  height={20}
+                  className="mr-2 text-[#2e8fff]"
                 />
                 Sign in with Azure DevOps
               </Button>
-              <Button variant="outline" size="lg" className="w-full">
-                <GitGraphIcon className="mr-2 h-4 w-4" />
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
+                <img
+                  src={Gitlab}
+                  alt="Gitlab"
+                  width={20}
+                  height={20}
+                  className="mr-2 text-[#2e8fff]"
+                />
                 Sign in with GitLab
               </Button>
             </TabsContent>
 
             <TabsContent value="self-hosted" className="space-y-3">
-              <Button variant="outline" size="lg" className="w-full">
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
                 <img
-                  src="/bitbucket-icon.svg"
-                  alt=""
-                  className="mr-2 h-4 w-4"
+                  src={Gitlab}
+                  alt="Gitlab"
+                  width={20}
+                  height={20}
+                  className="mr-2 text-[#2e8fff]"
                 />
                 Self Hosted GitLab
               </Button>
-              <Button variant="outline" size="lg" className="w-full">
-                <Lock className="mr-2 h-4 w-4" />
+              <Button
+                onClick={handleLogin}
+                variant="outline"
+                className="w-full h-14 text-sm text-[16px] font-semibold"
+              >
+                <KeyRoundIcon
+                  width={24}
+                  height={24}
+                  className="mr-2 scale-125"
+                />
                 Sign in with SSO
               </Button>
             </TabsContent>
@@ -90,7 +151,7 @@ const SignInPage = () => {
 
         {/* Policy Text */}
         <div className="text-center text-sm text-gray-500">
-          By signing up you agree to the{" "}
+          By Signing up you agree to the{" "}
           <a href="#" className="text-black hover:underline">
             Privacy Policy
           </a>

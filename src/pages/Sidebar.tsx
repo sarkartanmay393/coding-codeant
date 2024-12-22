@@ -28,19 +28,14 @@ const NAVIGATION_ITEMS = [
   "Settings",
 ] as const;
 
+const Users = ["AliceWonderland", "BobBuilder", "CharlieBrown", "DianaPrince"];
+
 type NavigationItem = (typeof NAVIGATION_ITEMS)[number];
 
 const Sidebar = () => {
   const [selectedItem, setSelectedItem] =
     useState<NavigationItem>("Repositories");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  const users = [
-    "UtkarshDhairyaPatel",
-    "JohnDoe",
-    "JaneSmith",
-    "RobertJohnson",
-  ];
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -51,14 +46,26 @@ const Sidebar = () => {
       {/* top bar */}
       <div className="h-16 flex justify-between items-center p-4 bg-white shadow-md md:hidden z-50">
         <div className="w-40 h-8">
-          <img src="/images/logo.svg" alt="CodeAnt AI" className="w-full h-full" />
+          <img
+            src="/images/logo.svg"
+            alt="CodeAnt AI"
+            className="w-full h-full"
+          />
         </div>
-        <Button variant="link" size='icon' onClick={toggleDrawer}>
-          {isDrawerOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <Button variant="link" size="icon" onClick={toggleDrawer}>
+          {isDrawerOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </Button>
       </div>
 
-      <div className={`w-screen h-screen fixed z-10 bg-gray-800 opacity-30 ${isDrawerOpen ? "" : "hidden"}`}></div>
+      <div
+        className={`w-screen h-screen fixed z-10 bg-gray-800 opacity-30 ${
+          isDrawerOpen ? "" : "hidden"
+        }`}
+      ></div>
 
       {/* dynamic nav board  */}
       <div
@@ -68,7 +75,11 @@ const Sidebar = () => {
       >
         <div className="hidden md:flex items-center gap-2 px-2 mb-4">
           <div className="w-40 h-8">
-            <img src="/images/logo.svg" alt="CodeAnt AI" className="w-full h-full" />
+            <img
+              src="/images/logo.svg"
+              alt="CodeAnt AI"
+              className="w-full h-full"
+            />
           </div>
         </div>
 
@@ -79,15 +90,15 @@ const Sidebar = () => {
                 variant="outline"
                 className="w-full justify-between font-normal border-gray-200"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 overflow-hidden">
                   <User className="h-4 w-4" />
-                  <span className="truncate">UtkarshDhairyaPa...</span>
+                  <span className="truncate whitespace-nowrap">{Users[0]}</span>
                 </div>
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 bg-white rounded-xl">
-              {users.map((user) => (
+              {Users.map((user) => (
                 <DropdownMenuItem key={user} className="rounded-lg">
                   <User className="h-4 w-4 mr-2" />
                   {user}
