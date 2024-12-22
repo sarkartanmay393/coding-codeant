@@ -5,7 +5,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "../components/ui/tabs";
-import { SiBitbucket, SiGithub } from "@icons-pack/react-Simple-icons";
+import { SiBitbucket, SiGithub } from "@icons-pack/react-simple-icons";
 
 import Gitlab from "../../public/images/gitlab.svg";
 import AzureDevops from "../../public/images/devops.svg";
