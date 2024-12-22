@@ -1,15 +1,27 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import RepositoryListing from "./pages/Dashboard";
-import SignInPage from "./pages/SignIn";
+import { Suspense, lazy } from "react";
+import { Loader2Icon } from "lucide-react";
+
+const RepositoryListing = lazy(() => import("./pages/Dashboard"));
+const SignInPage = lazy(() => import("./pages/SignIn"));
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/dashboard" element={<RepositoryListing />} />
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="*" element={<Navigate to="/login" />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="w-screen h-screen flex items-center justify-center gap-2">
+            <Loader2Icon className="animate-spin w-4 h-4" />
+            Loading...
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/dashboard" element={<RepositoryListing />} />
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };

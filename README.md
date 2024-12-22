@@ -1,4 +1,4 @@
-![](./public//images//logo.svg)
+![](./public//smoke.svg)
 
 # CodeAnt AI Dashboard
 
